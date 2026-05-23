@@ -1,146 +1,209 @@
-// ===== CUSTOM CURSOR =====
-const cursor = document.getElementById('cursor');
-const dot    = document.getElementById('cursor-dot');
-let mx = 0, my = 0, cx = 0, cy = 0;
+/* ---- THEME ---- */
+const html   = document.documentElement;
+const tBtn   = document.getElementById('themeBtn');
+const tIcon  = document.getElementById('tIcon');
+const tLabel = document.getElementById('tLabel');
+let dark = (localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')) === 'dark';
+tIcon.textContent  = dark ? '◐' : '◑';
+tLabel.textContent = dark ? 'Light' : 'Dark';
 
-document.addEventListener('mousemove', e => {
-  mx = e.clientX; my = e.clientY;
-  dot.style.left = mx + 'px';
-  dot.style.top  = my + 'px';
+tBtn.addEventListener('click', () => {
+  dark = !dark;
+  html.setAttribute('data-theme', dark ? 'dark' : 'light');
+  localStorage.setItem('theme', dark ? 'dark' : 'light');
+  tIcon.textContent  = dark ? '◐' : '◑';
+  tLabel.textContent = dark ? 'Light' : 'Dark';
 });
 
-(function animateCursor() {
-  cx += (mx - cx) * 0.12;
-  cy += (my - cy) * 0.12;
-  cursor.style.left = cx + 'px';
-  cursor.style.top  = cy + 'px';
-  requestAnimationFrame(animateCursor);
-})();
+/* ---- CURSOR (Miro-style) - desktop/mouse only ---- */
+if (window.matchMedia('(pointer: fine)').matches) {
+  const cursorEl = document.getElementById('cursor');
 
-document.querySelectorAll('a, button, .project-card, .exp-card, .skill-group, .about-card').forEach(el => {
-  el.addEventListener('mouseenter', () => {
-    cursor.style.width       = '60px';
-    cursor.style.height      = '60px';
-    cursor.style.borderColor = 'var(--accent)';
+  document.addEventListener('mousemove', e => {
+    cursorEl.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+    cursorEl.style.opacity = '1';
   });
-  el.addEventListener('mouseleave', () => {
-    cursor.style.width       = '40px';
-    cursor.style.height      = '40px';
-    cursor.style.borderColor = 'var(--accent2)';
-  });
-});
 
-// ===== NAV SCROLL =====
-const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 60);
-});
+  document.addEventListener('mouseleave', () => { cursorEl.style.opacity = '0'; });
+  document.addEventListener('mouseenter', () => { cursorEl.style.opacity = '1'; });
 
-// ===== TYPING EFFECT =====
-const roles = [
-  'AI/ML Engineer',
-  'Full-Stack Developer',
-  'Computer Vision Engineer',
-  'LLM & GenAI Builder',
-  'Edge AI Specialist',
-];
-let ri = 0, ci = 0, deleting = false;
-const typedEl = document.getElementById('typed-text');
-
-function type() {
-  const word = roles[ri];
-  if (!deleting) {
-    typedEl.textContent = word.slice(0, ci + 1);
-    ci++;
-    if (ci === word.length) {
-      deleting = true;
-      setTimeout(type, 1800);
-      return;
-    }
-  } else {
-    typedEl.textContent = word.slice(0, ci - 1);
-    ci--;
-    if (ci === 0) {
-      deleting = false;
-      ri = (ri + 1) % roles.length;
-    }
-  }
-  setTimeout(type, deleting ? 55 : 90);
-}
-setTimeout(type, 1600);
-
-// ===== TECH STACK MARQUEE =====
-const stackRow1 = [
-  { icon: 'devicon-python-plain colored',        label: 'Python',      url: 'https://www.python.org' },
-  { icon: 'devicon-cplusplus-plain colored',     label: 'C++',         url: 'https://isocpp.org' },
-  { icon: 'devicon-javascript-plain colored',    label: 'JavaScript',  url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript' },
-  { icon: 'devicon-java-plain colored',          label: 'Java',        url: 'https://www.java.com' },
-  { icon: 'devicon-pytorch-plain colored',       label: 'PyTorch',     url: 'https://pytorch.org' },
-  { icon: 'devicon-tensorflow-original colored', label: 'TensorFlow',  url: 'https://www.tensorflow.org' },
-  { icon: 'devicon-fastapi-plain colored',       label: 'FastAPI',     url: 'https://fastapi.tiangolo.com' },
-  { icon: 'devicon-nodejs-plain colored',        label: 'Node.js',     url: 'https://nodejs.org' },
-  { icon: 'devicon-docker-plain colored',        label: 'Docker',      url: 'https://www.docker.com' },
-  { icon: 'devicon-git-plain colored',           label: 'Git',         url: 'https://git-scm.com' },
-  { icon: 'devicon-linux-plain',                 label: 'Linux',       url: 'https://www.linux.org' },
-];
-const stackRow2 = [
-  { icon: 'devicon-postgresql-plain colored',    label: 'PostgreSQL',  url: 'https://www.postgresql.org' },
-  { icon: 'devicon-opencv-plain colored',        label: 'OpenCV',      url: 'https://opencv.org' },
-  { icon: 'devicon-html5-plain colored',         label: 'HTML5',       url: 'https://developer.mozilla.org/en-US/docs/Web/HTML' },
-  { icon: 'devicon-css3-plain colored',          label: 'CSS3',        url: 'https://developer.mozilla.org/en-US/docs/Web/CSS' },
-  { icon: 'devicon-mongodb-plain colored',       label: 'MongoDB',     url: 'https://www.mongodb.com' },
-  { icon: 'devicon-sqlite-plain colored',        label: 'SQL',         url: 'https://www.sqlite.org' },
-  { icon: 'devicon-vscode-plain colored',        label: 'VS Code',     url: 'https://code.visualstudio.com' },
-  { icon: 'devicon-jupyter-plain colored',       label: 'Jupyter',     url: 'https://jupyter.org' },
-  { icon: 'devicon-anaconda-original colored',   label: 'Conda',       url: 'https://anaconda.org' },
-  { plain: true, bg: '#76b900', text: 'NV',      label: 'CUDA',        url: 'https://developer.nvidia.com/cuda-zone' },
-  { plain: true, bg: '#6236ff', text: 'LLM',     label: 'LangChain',   url: 'https://www.langchain.com' },
-  { plain: true, bg: '#ff6b00', text: 'HF',      label: 'HuggingFace', url: 'https://huggingface.co' },
-];
-
-function buildRow(items, rowId) {
-  const row = document.getElementById(rowId);
-  [...items, ...items].forEach(item => {         // double for seamless loop
-    const div = document.createElement('div');
-    div.className = 'tech-item';
-    div.innerHTML = item.plain
-      ? `<div class="tech-icon-plain" style="background:${item.bg}">${item.text}</div><span>${item.label}</span>`
-      : `<i class="${item.icon}"></i><span>${item.label}</span>`;
-
-    div.addEventListener('click', e => {
-      // ripple
-      const rect   = div.getBoundingClientRect();
-      const size   = Math.max(rect.width, rect.height);
-      const ripple = document.createElement('span');
-      ripple.className  = 'ripple';
-      ripple.style.cssText =
-        `width:${size}px;height:${size}px;left:${e.clientX - rect.left - size/2}px;top:${e.clientY - rect.top - size/2}px`;
-      div.appendChild(ripple);
-      ripple.addEventListener('animationend', () => ripple.remove());
-
-      // pop glow then open link
-      div.classList.add('popped');
-      setTimeout(() => {
-        div.classList.remove('popped');
-        if (item.url) window.open(item.url, '_blank', 'noopener');
-      }, 300);
+  document.querySelectorAll('a, button, .pcard:not(.pcard--static)').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      document.body.classList.add('is-hovering');
+      const t = document.getElementById('cursorLabelText');
+      if (t && el.dataset.cursor === 'hi') {
+        t.style.opacity = '0';
+        setTimeout(() => { t.textContent = 'Say hi! 👋'; t.style.opacity = '1'; }, 120);
+      }
     });
-
-    row.appendChild(div);
+    el.addEventListener('mouseleave', () => {
+      document.body.classList.remove('is-hovering');
+      const t = document.getElementById('cursorLabelText');
+      if (t && t.textContent !== 'Guest') {
+        t.style.opacity = '0';
+        setTimeout(() => { t.textContent = 'Guest'; t.style.opacity = '1'; }, 120);
+      }
+    });
   });
 }
 
-buildRow(stackRow1, 'row1');
-buildRow(stackRow2, 'row2');
+/* ---- PRELOADER ---- */
+const preloader = document.getElementById('preloader');
+const plBar     = document.getElementById('plBar');
+const plName    = document.querySelector('.pl-name span');
 
-// ===== SCROLL FADE-IN =====
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry, i) => {
-    if (entry.isIntersecting) {
-      setTimeout(() => entry.target.classList.add('visible'), i * 80);
-      observer.unobserve(entry.target);
+gsap.registerPlugin(ScrollTrigger);
+
+if (sessionStorage.getItem('rm_visited')) {
+  preloader.style.display = 'none';
+  heroIn();
+} else {
+  sessionStorage.setItem('rm_visited', '1');
+  gsap.to(plName, { y: 0, duration: 0.7, ease: 'power3.out', delay: 0.1 });
+  setTimeout(() => { plBar.style.width = '100%'; }, 150);
+  setTimeout(() => {
+    gsap.to(preloader, {
+      yPercent: -100,
+      duration: 0.9,
+      ease: 'power3.inOut',
+      onComplete: () => {
+        preloader.style.display = 'none';
+        heroIn();
+      }
+    });
+  }, 1300);
+}
+
+/* ---- HERO ENTRANCE ---- */
+function heroIn() {
+  gsap.set('.nav-logo', { opacity: 0 });
+  gsap.set('.nav-right', { opacity: 0 });
+  gsap.set('.pill', { opacity: 0, x: 32 });
+
+  gsap.to(['.nav-logo', '.nav-right'], {
+    opacity: 1, duration: 0.7, stagger: 0.12, ease: 'power2.out'
+  });
+  gsap.to('.hero-title .tl span', {
+    y: 0, duration: 1.05, stagger: 0.1, ease: 'power3.out', delay: 0.05
+  });
+  gsap.to('.hero-eyebrow span', {
+    y: 0, duration: 0.75, ease: 'power3.out', delay: 0.5
+  });
+  gsap.set('.hero-desc', { opacity: 0, y: 16 });
+  gsap.to('.hero-desc', { opacity: 1, y: 0, duration: 0.75, ease: 'power2.out', delay: 0.65 });
+  gsap.to('.pill', {
+    x: 0, opacity: 1, duration: 0.55, stagger: 0.1,
+    ease: 'power2.out', delay: 0.75
+  });
+  gsap.to('.scroll-hint', { opacity: 1, duration: 0.6, delay: 1.2 });
+
+  initScroll();
+}
+
+/* ---- SCROLL ANIMATIONS ---- */
+function initScroll() {
+  gsap.set('.pcard:not(.pcard--static)', { opacity: 0, y: 40 });
+  gsap.set('.pdf-strip', { opacity: 0, y: 24 });
+  gsap.set('.exp-card', { opacity: 0, y: 32 });
+  gsap.set('.edu-block', { opacity: 0, y: 24 });
+
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('.pcard:not(.pcard--static), .pdf-strip, .exp-card, .edu-block').forEach(el => {
+      el.style.opacity = '1';
+      el.style.transform = 'none';
+    });
+    return;
+  }
+
+  gsap.utils.toArray('.s-title').forEach(el => {
+    const spans = el.querySelectorAll('.tl span');
+    gsap.to(spans, {
+      y: 0, duration: 1.05, stagger: 0.08, ease: 'power3.out',
+      scrollTrigger: { trigger: el, start: 'top 88%' }
+    });
+  });
+
+  gsap.utils.toArray('.pcard:not(.pcard--static)').forEach((el, i) => {
+    gsap.to(el, {
+      opacity: 1, y: 0, duration: 0.75, ease: 'power2.out',
+      delay: i * 0.06,
+      scrollTrigger: { trigger: el, start: 'top 90%' }
+    });
+  });
+
+  gsap.to('.pdf-strip', {
+    opacity: 1, y: 0, duration: 0.65, ease: 'power2.out',
+    scrollTrigger: { trigger: '.pdf-strip', start: 'top 88%' }
+  });
+
+  gsap.utils.toArray('.exp-card').forEach((el, i) => {
+    gsap.to(el, {
+      opacity: 1, y: 0, duration: 0.7, ease: 'power2.out',
+      delay: i * 0.1,
+      scrollTrigger: { trigger: el, start: 'top 90%' }
+    });
+  });
+
+  gsap.utils.toArray('.edu-block').forEach((el, i) => {
+    gsap.to(el, {
+      opacity: 1, y: 0, duration: 0.65, ease: 'power2.out',
+      delay: i * 0.12,
+      scrollTrigger: { trigger: el, start: 'top 90%' }
+    });
+  });
+
+  gsap.utils.toArray('.contact-headline .tl span').forEach((el, i) => {
+    gsap.fromTo(el,
+      { y: '110%' },
+      { y: '0%', duration: 0.9, delay: i * 0.12, ease: 'power3.out',
+        scrollTrigger: { trigger: el, start: 'top 90%' }
+      }
+    );
+  });
+
+  gsap.fromTo('.contact-footer',
+    { opacity: 0, y: 20 },
+    { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out',
+      scrollTrigger: { trigger: '.contact-footer', start: 'top 90%' }
+    }
+  );
+
+  setTimeout(() => ScrollTrigger.refresh(), 400);
+  window.addEventListener('load', () => ScrollTrigger.refresh());
+}
+
+/* ---- NAV SCROLL STATE ---- */
+const navEl = document.getElementById('nav');
+let navScrolled = false;
+window.addEventListener('scroll', () => {
+  const shouldScroll = window.scrollY > 60;
+  if (shouldScroll === navScrolled) return;
+  navScrolled = shouldScroll;
+  navEl.classList.toggle('scrolled', shouldScroll);
+}, { passive: true });
+
+/* ---- SMOOTH ANCHOR SCROLL ---- */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   });
-}, { threshold: 0.1 });
+});
 
-document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+/* ---- COPY EMAIL ---- */
+const copyBtn = document.getElementById('copyEmailBtn');
+if (copyBtn) {
+  copyBtn.addEventListener('click', () => {
+    navigator.clipboard.writeText('rohanm1307@gmail.com').then(() => {
+      copyBtn.classList.add('copied');
+      copyBtn.innerHTML = '<svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5L11 3"/></svg>';
+      setTimeout(() => {
+        copyBtn.classList.remove('copied');
+        copyBtn.innerHTML = '<svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="4.5" width="7" height="7" rx="1.2"/><path d="M1.5 8.5V2.5a1 1 0 0 1 1-1h6"/></svg>';
+      }, 2000);
+    });
+  });
+}
