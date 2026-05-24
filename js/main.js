@@ -15,7 +15,7 @@ tBtn.addEventListener('click', () => {
   tLabel.textContent = dark ? 'Light' : 'Dark';
 });
 
-/* ---- CURSOR (Miro-style) - desktop/mouse only ---- */
+/* ---- CURSOR ---- */
 if (window.matchMedia('(pointer: fine)').matches) {
   const cursorEl = document.getElementById('cursor');
 
@@ -27,13 +27,13 @@ if (window.matchMedia('(pointer: fine)').matches) {
   document.addEventListener('mouseleave', () => { cursorEl.style.opacity = '0'; });
   document.addEventListener('mouseenter', () => { cursorEl.style.opacity = '1'; });
 
-  document.querySelectorAll('a, button, .pcard:not(.pcard--static)').forEach(el => {
+  document.querySelectorAll('a, button').forEach(el => {
     el.addEventListener('mouseenter', () => {
       document.body.classList.add('is-hovering');
       const t = document.getElementById('cursorLabelText');
       if (t && el.dataset.cursor === 'hi') {
         t.style.opacity = '0';
-        setTimeout(() => { t.textContent = 'Say hi! 👋'; t.style.opacity = '1'; }, 120);
+        setTimeout(() => { t.textContent = 'Say hi!'; t.style.opacity = '1'; }, 120);
       }
     });
     el.addEventListener('mouseleave', () => {
@@ -78,93 +78,88 @@ if (sessionStorage.getItem('rm_visited')) {
 function heroIn() {
   gsap.set('.nav-logo', { opacity: 0 });
   gsap.set('.nav-right', { opacity: 0 });
-  gsap.set('.pill', { opacity: 0, x: 32 });
+  gsap.set('.pill', { opacity: 0, x: 24 });
 
-  gsap.to(['.nav-logo', '.nav-right'], {
-    opacity: 1, duration: 0.7, stagger: 0.12, ease: 'power2.out'
-  });
-  gsap.to('.hero-title .tl span', {
-    y: 0, duration: 1.05, stagger: 0.1, ease: 'power3.out', delay: 0.05
-  });
-  gsap.to('.hero-eyebrow span', {
-    y: 0, duration: 0.75, ease: 'power3.out', delay: 0.5
-  });
-  gsap.set('.hero-desc', { opacity: 0, y: 16 });
-  gsap.to('.hero-desc', { opacity: 1, y: 0, duration: 0.75, ease: 'power2.out', delay: 0.65 });
-  gsap.to('.pill', {
-    x: 0, opacity: 1, duration: 0.55, stagger: 0.1,
-    ease: 'power2.out', delay: 0.75
-  });
-  gsap.to('.scroll-hint', { opacity: 1, duration: 0.6, delay: 1.2 });
+  gsap.to(['.nav-logo', '.nav-right'], { opacity: 1, duration: 0.7, stagger: 0.1, ease: 'power2.out' });
+  gsap.to('.hero-title .tl span', { y: 0, duration: 1.05, stagger: 0.1, ease: 'power3.out', delay: 0.05 });
+  gsap.to('.hero-eyebrow span', { y: 0, duration: 0.75, ease: 'power3.out', delay: 0.5 });
+  gsap.set('.hero-desc', { opacity: 0, y: 14 });
+  gsap.to('.hero-desc', { opacity: 1, y: 0, duration: 0.7, ease: 'power2.out', delay: 0.6 });
+  gsap.to('.pill', { x: 0, opacity: 1, duration: 0.5, stagger: 0.1, ease: 'power2.out', delay: 0.7 });
+  gsap.to('.scroll-hint', { opacity: 1, duration: 0.6, delay: 1.1 });
 
   initScroll();
 }
 
 /* ---- SCROLL ANIMATIONS ---- */
 function initScroll() {
-  gsap.set('.pcard:not(.pcard--static)', { opacity: 0, y: 40 });
-  gsap.set('.pdf-strip', { opacity: 0, y: 24 });
-  gsap.set('.exp-card', { opacity: 0, y: 32 });
-  gsap.set('.edu-block', { opacity: 0, y: 24 });
+  gsap.set('.pcard', { opacity: 0, y: 28 });
+  gsap.set('.tl-item', { opacity: 0, y: 20 });
+  gsap.set('.aside-block', { opacity: 0, y: 16 });
+  gsap.set('.pdf-strip', { opacity: 0, y: 16 });
 
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    document.querySelectorAll('.pcard:not(.pcard--static), .pdf-strip, .exp-card, .edu-block').forEach(el => {
-      el.style.opacity = '1';
-      el.style.transform = 'none';
+    document.querySelectorAll('.pcard, .tl-item, .aside-block, .pdf-strip').forEach(el => {
+      el.style.opacity = '1'; el.style.transform = 'none';
     });
     return;
   }
 
+  /* Section titles */
   gsap.utils.toArray('.s-title').forEach(el => {
-    const spans = el.querySelectorAll('.tl span');
-    gsap.to(spans, {
-      y: 0, duration: 1.05, stagger: 0.08, ease: 'power3.out',
+    gsap.to(el.querySelectorAll('.tl span'), {
+      y: 0, duration: 1, stagger: 0.07, ease: 'power3.out',
       scrollTrigger: { trigger: el, start: 'top 88%' }
     });
   });
 
-  gsap.utils.toArray('.pcard:not(.pcard--static)').forEach((el, i) => {
+  /* Project cards — stagger by row */
+  gsap.utils.toArray('.pcard').forEach((el, i) => {
     gsap.to(el, {
-      opacity: 1, y: 0, duration: 0.75, ease: 'power2.out',
-      delay: i * 0.06,
-      scrollTrigger: { trigger: el, start: 'top 90%' }
+      opacity: 1, y: 0, duration: 0.6, ease: 'power2.out',
+      delay: (i % 2) * 0.08,
+      scrollTrigger: { trigger: el, start: 'top 92%' }
     });
   });
 
+  /* Resume strip */
   gsap.to('.pdf-strip', {
-    opacity: 1, y: 0, duration: 0.65, ease: 'power2.out',
-    scrollTrigger: { trigger: '.pdf-strip', start: 'top 88%' }
+    opacity: 1, y: 0, duration: 0.6, ease: 'power2.out',
+    scrollTrigger: { trigger: '.pdf-strip', start: 'top 90%' }
   });
 
-  gsap.utils.toArray('.exp-card').forEach((el, i) => {
+  /* Timeline items */
+  gsap.utils.toArray('.tl-item').forEach((el, i) => {
     gsap.to(el, {
-      opacity: 1, y: 0, duration: 0.7, ease: 'power2.out',
+      opacity: 1, y: 0, duration: 0.55, ease: 'power2.out',
+      delay: i * 0.07,
+      scrollTrigger: { trigger: el, start: 'top 92%' }
+    });
+  });
+
+  /* Aside blocks */
+  gsap.utils.toArray('.aside-block').forEach((el, i) => {
+    gsap.to(el, {
+      opacity: 1, y: 0, duration: 0.55, ease: 'power2.out',
       delay: i * 0.1,
-      scrollTrigger: { trigger: el, start: 'top 90%' }
+      scrollTrigger: { trigger: el, start: 'top 92%' }
     });
   });
 
-  gsap.utils.toArray('.edu-block').forEach((el, i) => {
-    gsap.to(el, {
-      opacity: 1, y: 0, duration: 0.65, ease: 'power2.out',
-      delay: i * 0.12,
-      scrollTrigger: { trigger: el, start: 'top 90%' }
-    });
-  });
-
+  /* Contact headline */
   gsap.utils.toArray('.contact-headline .tl span').forEach((el, i) => {
     gsap.fromTo(el,
       { y: '110%' },
-      { y: '0%', duration: 0.9, delay: i * 0.12, ease: 'power3.out',
+      { y: '0%', duration: 0.9, delay: i * 0.1, ease: 'power3.out',
         scrollTrigger: { trigger: el, start: 'top 90%' }
       }
     );
   });
 
   gsap.fromTo('.contact-footer',
-    { opacity: 0, y: 20 },
-    { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out',
-      scrollTrigger: { trigger: '.contact-footer', start: 'top 90%' }
+    { opacity: 0, y: 16 },
+    { opacity: 1, y: 0, duration: 0.55, ease: 'power2.out',
+      scrollTrigger: { trigger: '.contact-footer', start: 'top 92%' }
     }
   );
 
@@ -186,10 +181,7 @@ window.addEventListener('scroll', () => {
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
     const target = document.querySelector(a.getAttribute('href'));
-    if (target) {
-      e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
   });
 });
 

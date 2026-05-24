@@ -1,46 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Theme — runs before CSS to prevent flash -->
   <script>(function(){var s=localStorage.getItem('theme');document.documentElement.setAttribute('data-theme',s?s:(window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'));})();</script>
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Rohan Mulay — AI Engineer</title>
-  <meta name="description" content="AI Engineer based in Bengaluru. Building ADAS systems, computer vision pipelines, autonomous agents, and edge ML that ships in the real world." />
+  <meta name="description" content="AI Engineer based in Bengaluru. Building ADAS systems, autonomous agents, computer vision pipelines, and edge ML that ships in the real world." />
 
-  <!-- Open Graph -->
-  <meta property="og:type"        content="website" />
-  <meta property="og:title"       content="Rohan Mulay — AI Engineer" />
-  <meta property="og:description" content="AI Engineer based in Bengaluru. ADAS, computer vision, autonomous agents, and edge AI." />
-
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:ital,wght@0,300;0,400;0,600;1,300&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:ital,wght@0,300;0,400;0,600;1,300&display=swap" /></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" /></noscript>
 
-  <!-- Styles -->
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-  <!-- ==================== PRELOADER ==================== -->
+  <!-- PRELOADER -->
   <div id="preloader" aria-hidden="true">
     <div class="pl-name"><span>Rohan Mulay</span></div>
     <div class="pl-bar-wrap"><div class="pl-bar" id="plBar"></div></div>
   </div>
 
-  <!-- ==================== CURSOR ==================== -->
+  <!-- CURSOR -->
   <div class="cursor" id="cursor" aria-hidden="true">
     <div class="cursor-arrow">
-      <svg width="22" height="26" viewBox="0 0 22 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M2 2L2 21L6.8 16.2L10.4 24L13.4 22.6L9.8 14.8L17 14.8L2 2Z"
-              fill="white"
-              stroke="#0C0C0B"
-              stroke-width="1.4"
-              stroke-linejoin="round"
-              stroke-linecap="round"/>
+      <svg width="22" height="26" viewBox="0 0 22 26" fill="none">
+        <path d="M2 2L2 21L6.8 16.2L10.4 24L13.4 22.6L9.8 14.8L17 14.8L2 2Z" fill="white" stroke="#0C0C0B" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/>
       </svg>
     </div>
     <div class="cursor-label" id="cursorLabel">
@@ -49,7 +36,7 @@
     </div>
   </div>
 
-  <!-- ==================== NAV ==================== -->
+  <!-- NAV -->
   <nav id="nav">
     <a href="#hero" class="nav-logo">rm</a>
     <div class="nav-right">
@@ -67,19 +54,9 @@
 
   <main>
 
-  <!-- ==================== HERO ==================== -->
+  <!-- HERO -->
   <section id="hero">
-
-    <!-- Geometric decorative element -->
-    <div class="hero-geo" aria-hidden="true">
-      <svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="90" y="10" width="113" height="113" rx="4" transform="rotate(45 90 90)" stroke="currentColor" stroke-width="0.8" stroke-dasharray="4 6" opacity="0.18"/>
-        <rect x="90" y="32" width="82" height="82" rx="3" transform="rotate(45 90 90)" stroke="currentColor" stroke-width="0.5" opacity="0.12"/>
-        <circle cx="90" cy="90" r="3" fill="var(--accent)" opacity="0.7"/>
-      </svg>
-    </div>
-
-    <p class="hero-eyebrow"><span>AI Engineer</span></p>
+    <p class="hero-eyebrow"><span>AI Engineer · Bengaluru</span></p>
 
     <h1 class="hero-title">
       <span class="tl"><span>Rohan</span></span>
@@ -88,11 +65,10 @@
 
     <div class="hero-bottom">
       <p class="hero-desc">
-        <span>Bengaluru based. Three years shipping production AI — ADAS safety suites, autonomous agents, computer vision pipelines, and edge ML that works in the real world.</span>
+        <span>Three years shipping production AI — ADAS safety suites, autonomous agents, computer vision pipelines, and edge ML across commercial fleets and startups.</span>
       </p>
       <div class="hero-right">
-        <div class="pill available"><span class="pill-dot"></span>Available for opportunities</div>
-        <div class="pill">Bengaluru, India</div>
+        <div class="pill available"><span class="pill-dot"></span>Open to opportunities</div>
         <div class="pill">PES University '26</div>
       </div>
     </div>
@@ -103,41 +79,39 @@
     </div>
   </section>
 
-  <!-- ==================== MARQUEE ==================== -->
+  <!-- MARQUEE -->
   <div class="marquee-wrap" aria-hidden="true">
     <div class="marquee-track">
       <span class="mq-item">Computer Vision</span>
-      <span class="mq-item">ADAS Systems</span>
+      <span class="mq-item">ADAS</span>
       <span class="mq-item">Autonomous Agents</span>
       <span class="mq-item">PyTorch</span>
-      <span class="mq-item">TensorRT INT8</span>
-      <span class="mq-item">LLM Pipelines</span>
-      <span class="mq-item">FastAPI</span>
+      <span class="mq-item">TensorRT</span>
       <span class="mq-item">LangGraph</span>
-      <span class="mq-item">CUDA &amp; TensorRT</span>
+      <span class="mq-item">FastAPI</span>
+      <span class="mq-item">Qdrant</span>
+      <span class="mq-item">CUDA</span>
       <span class="mq-item">Sensor Fusion</span>
       <span class="mq-item">OpenCV</span>
-      <span class="mq-item">Jetson Orin NX</span>
-      <span class="mq-item">Vector Search</span>
+      <span class="mq-item">Jetson Orin</span>
       <span class="mq-item">Anthropic Claude</span>
       <span class="mq-item">Computer Vision</span>
-      <span class="mq-item">ADAS Systems</span>
+      <span class="mq-item">ADAS</span>
       <span class="mq-item">Autonomous Agents</span>
       <span class="mq-item">PyTorch</span>
-      <span class="mq-item">TensorRT INT8</span>
-      <span class="mq-item">LLM Pipelines</span>
-      <span class="mq-item">FastAPI</span>
+      <span class="mq-item">TensorRT</span>
       <span class="mq-item">LangGraph</span>
-      <span class="mq-item">CUDA &amp; TensorRT</span>
+      <span class="mq-item">FastAPI</span>
+      <span class="mq-item">Qdrant</span>
+      <span class="mq-item">CUDA</span>
       <span class="mq-item">Sensor Fusion</span>
       <span class="mq-item">OpenCV</span>
-      <span class="mq-item">Jetson Orin NX</span>
-      <span class="mq-item">Vector Search</span>
+      <span class="mq-item">Jetson Orin</span>
       <span class="mq-item">Anthropic Claude</span>
     </div>
   </div>
 
-  <!-- ==================== WORK ==================== -->
+  <!-- WORK -->
   <section id="work">
     <div class="s-header">
       <div>
@@ -149,225 +123,106 @@
 
     <div class="projects">
 
-      <!-- 01 — SIREN -->
-      <article class="pcard p-siren">
-        <div class="pcard-inner">
-          <div class="pcard-info">
-            <div class="pcard-top">
-              <span class="pnum">01</span>
-              <div class="tags" style="margin-left:16px;">
-                <span class="tag">Autonomous Agent</span>
-                <span class="tag">DevOps</span>
-              </div>
-            </div>
-            <div class="pcard-mid">
-              <p class="pyear">Personal Project / 2025</p>
-              <h3 class="pname">SIREN — Self-Improving Incident Response Engine</h3>
-              <div class="tags" style="margin-top:10px;">
-                <span class="tag">Claude Opus 4.7</span>
-                <span class="tag">LangGraph</span>
-                <span class="tag">Qdrant</span>
-                <span class="tag">FastAPI</span>
-                <span class="tag">Next.js 16</span>
-                <span class="tag">Redis</span>
-                <span class="tag">Slack SDK</span>
-              </div>
-            </div>
-            <div class="pmetrics">
-              <div class="pmetric">
-                <span class="pm-val">−68%</span>
-                <span class="pm-label">MTTR reduction via Qdrant vector memory recall</span>
-              </div>
-              <div class="pmetric">
-                <span class="pm-val">P1→P4</span>
-                <span class="pm-label">Autonomous triage, investigation, and Slack-gated remediation</span>
-              </div>
-            </div>
-            <div class="pcard-links">
-              <a href="https://siren-ruby.vercel.app" target="_blank" rel="noopener" class="plink live" data-cursor="hi">
-                <svg width="10" height="10" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12L12 2M12 2H4M12 2V10"/></svg>
-                Live
-              </a>
-              <a href="https://github.com/RohanMulay1/siren" target="_blank" rel="noopener" class="plink" data-cursor="hi">
-                <svg width="10" height="10" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-                GitHub
-              </a>
-            </div>
-          </div>
+      <article class="pcard">
+        <div class="pc-meta">
+          <span class="pnum">01</span>
+        </div>
+        <h3 class="pname">SIREN</h3>
+        <p class="pdesc">Autonomous AI incident response engine. Triages alerts, runs multi-step investigation with Claude Opus, gates risky actions behind Slack approval, and improves MTTR with every incident via Qdrant vector memory.</p>
+        <div class="tags">
+          <span class="tag">Claude Opus 4.7</span>
+          <span class="tag">LangGraph</span>
+          <span class="tag">Qdrant</span>
+          <span class="tag">FastAPI</span>
+          <span class="tag">Next.js 16</span>
+          <span class="tag">Redis</span>
+          <span class="tag">Slack SDK</span>
+        </div>
+        <div class="pc-stat">−68% MTTR over 13 incidents via semantic recall</div>
+        <div class="pcard-links">
+          <a href="https://siren-ruby.vercel.app" target="_blank" rel="noopener" class="plink live" data-cursor="hi">Live ↗</a>
+          <a href="https://github.com/RohanMulay1/siren" target="_blank" rel="noopener" class="plink" data-cursor="hi">GitHub</a>
         </div>
       </article>
 
-      <!-- 02 — DevLift -->
-      <article class="pcard p-devlift">
-        <div class="pcard-inner">
-          <div class="pcard-info">
-            <div class="pcard-top">
-              <span class="pnum">02</span>
-              <div class="tags" style="margin-left:16px;">
-                <span class="tag hackathon-tag">IBM Bob Hackathon</span>
-                <span class="tag">GenAI</span>
-              </div>
-            </div>
-            <div class="pcard-mid">
-              <p class="pyear">IBM Bob Hackathon / 2025</p>
-              <h3 class="pname">DevLift — AI Developer Assessment Platform</h3>
-              <div class="tags" style="margin-top:10px;">
-                <span class="tag">Next.js 14</span>
-                <span class="tag">FastAPI</span>
-                <span class="tag">IBM watsonx.ai</span>
-                <span class="tag">Llama 3.3 70B</span>
-                <span class="tag">TypeScript</span>
-                <span class="tag">shadcn/ui</span>
-              </div>
-            </div>
-            <div class="pmetrics">
-              <div class="pmetric">
-                <span class="pm-val">IBM</span>
-                <span class="pm-label">watsonx.ai foundation model backend</span>
-              </div>
-              <div class="pmetric">
-                <span class="pm-val">AI</span>
-                <span class="pm-label">Code quality assessment and developer ranking</span>
-              </div>
-            </div>
-            <div class="pcard-links">
-              <a href="https://github.com/RohanMulay1/devlift" target="_blank" rel="noopener" class="plink" data-cursor="hi">
-                <svg width="10" height="10" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-                GitHub
-              </a>
-            </div>
-          </div>
+      <article class="pcard">
+        <div class="pc-meta">
+          <span class="pnum">02</span>
+          <span class="hackathon-tag">IBM Bob Hackathon</span>
+        </div>
+        <h3 class="pname">DevLift</h3>
+        <p class="pdesc">AI-powered developer assessment platform built at IBM Bob Hackathon. Evaluates code quality, ranks candidates, and generates structured reports using IBM watsonx.ai foundation models.</p>
+        <div class="tags">
+          <span class="tag">Next.js 14</span>
+          <span class="tag">FastAPI</span>
+          <span class="tag">IBM watsonx.ai</span>
+          <span class="tag">Llama 3.3 70B</span>
+          <span class="tag">TypeScript</span>
+          <span class="tag">shadcn/ui</span>
+        </div>
+        <div class="pcard-links">
+          <a href="https://github.com/RohanMulay1/devlift" target="_blank" rel="noopener" class="plink" data-cursor="hi">GitHub</a>
         </div>
       </article>
 
-      <!-- 03 — LearnAI -->
-      <article class="pcard p-learnai">
-        <div class="pcard-inner">
-          <div class="pcard-info">
-            <div class="pcard-top">
-              <span class="pnum">03</span>
-              <div class="tags" style="margin-left:16px;">
-                <span class="tag">EdTech</span>
-                <span class="tag">Visualization</span>
-              </div>
-            </div>
-            <div class="pcard-mid">
-              <p class="pyear">Personal Project / 2025</p>
-              <h3 class="pname">LearnAI — Interactive AI/ML Concepts Platform</h3>
-              <div class="tags" style="margin-top:10px;">
-                <span class="tag">React 18</span>
-                <span class="tag">TypeScript</span>
-                <span class="tag">D3 v7</span>
-                <span class="tag">Monaco Editor</span>
-                <span class="tag">Groq</span>
-                <span class="tag">Zustand</span>
-                <span class="tag">Framer Motion</span>
-              </div>
-            </div>
-            <div class="pmetrics">
-              <div class="pmetric">
-                <span class="pm-val">D3</span>
-                <span class="pm-label">Live algorithm visualizations with step-through debugger</span>
-              </div>
-              <div class="pmetric">
-                <span class="pm-val">LLM</span>
-                <span class="pm-label">Groq-powered AI tutor answering in-context questions</span>
-              </div>
-            </div>
-            <div class="pcard-links">
-              <a href="https://ai-learning-platform-gold.vercel.app" target="_blank" rel="noopener" class="plink live" data-cursor="hi">
-                <svg width="10" height="10" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12L12 2M12 2H4M12 2V10"/></svg>
-                Live
-              </a>
-              <a href="https://github.com/RohanMulay1/ai-learning-platform" target="_blank" rel="noopener" class="plink" data-cursor="hi">
-                <svg width="10" height="10" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-                GitHub
-              </a>
-            </div>
-          </div>
+      <article class="pcard">
+        <div class="pc-meta">
+          <span class="pnum">03</span>
+        </div>
+        <h3 class="pname">LearnAI</h3>
+        <p class="pdesc">Interactive AI/ML learning platform with live D3 algorithm visualizations, an in-browser Monaco code editor, and a Groq-powered AI tutor that answers questions in context of the current lesson.</p>
+        <div class="tags">
+          <span class="tag">React 18</span>
+          <span class="tag">TypeScript</span>
+          <span class="tag">D3 v7</span>
+          <span class="tag">Monaco Editor</span>
+          <span class="tag">Groq</span>
+          <span class="tag">Zustand</span>
+          <span class="tag">Framer Motion</span>
+        </div>
+        <div class="pcard-links">
+          <a href="https://ai-learning-platform-gold.vercel.app" target="_blank" rel="noopener" class="plink live" data-cursor="hi">Live ↗</a>
+          <a href="https://github.com/RohanMulay1/ai-learning-platform" target="_blank" rel="noopener" class="plink" data-cursor="hi">GitHub</a>
         </div>
       </article>
 
-      <!-- 04 — Shortlisting System -->
-      <article class="pcard p-shortlist">
-        <div class="pcard-inner">
-          <div class="pcard-info">
-            <div class="pcard-top">
-              <span class="pnum">04</span>
-              <div class="tags" style="margin-left:16px;">
-                <span class="tag">LLM</span>
-                <span class="tag">HR Tech</span>
-              </div>
-            </div>
-            <div class="pcard-mid">
-              <p class="pyear">Personal Project / 2024</p>
-              <h3 class="pname">AI Candidate Shortlisting System</h3>
-              <div class="tags" style="margin-top:10px;">
-                <span class="tag">Python</span>
-                <span class="tag">Streamlit</span>
-                <span class="tag">OpenAI</span>
-                <span class="tag">FAISS</span>
-              </div>
-            </div>
-            <div class="pmetrics">
-              <div class="pmetric">
-                <span class="pm-val">FAISS</span>
-                <span class="pm-label">Vector similarity search over resume embeddings</span>
-              </div>
-              <div class="pmetric">
-                <span class="pm-val">LLM</span>
-                <span class="pm-label">GPT-powered structured resume analysis and ranking</span>
-              </div>
-            </div>
-            <div class="pcard-links">
-              <a href="https://github.com/RohanMulay1/shortlisting-system" target="_blank" rel="noopener" class="plink" data-cursor="hi">
-                <svg width="10" height="10" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-                GitHub
-              </a>
-            </div>
-          </div>
+      <article class="pcard">
+        <div class="pc-meta">
+          <span class="pnum">04</span>
+        </div>
+        <h3 class="pname">Shortlisting System</h3>
+        <p class="pdesc">AI resume screening tool that embeds CVs into FAISS vector space, runs semantic similarity search against job descriptions, and uses GPT to generate structured candidate rankings and analysis.</p>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">Streamlit</span>
+          <span class="tag">OpenAI</span>
+          <span class="tag">FAISS</span>
+        </div>
+        <div class="pcard-links">
+          <a href="https://github.com/RohanMulay1/shortlisting-system" target="_blank" rel="noopener" class="plink" data-cursor="hi">GitHub</a>
         </div>
       </article>
 
-      <!-- 05 — Arena AI -->
-      <article class="pcard p-arena">
-        <div class="pcard-inner">
-          <div class="pcard-info">
-            <div class="pcard-top">
-              <span class="pnum">05</span>
-              <div class="tags" style="margin-left:16px;">
-                <span class="tag hackathon-tag">NextGenHacks 2025</span>
-                <span class="tag">GenAI</span>
-              </div>
-            </div>
-            <div class="pcard-mid">
-              <p class="pyear">NextGenHacks 2025</p>
-              <h3 class="pname">Arena AI — Live LLM Battle Platform</h3>
-              <div class="tags" style="margin-top:10px;">
-                <span class="tag">Next.js 14</span>
-                <span class="tag">FastAPI</span>
-                <span class="tag">Groq</span>
-                <span class="tag">Llama 3.3 70B</span>
-                <span class="tag">SSE</span>
-                <span class="tag">Recharts</span>
-              </div>
-            </div>
-            <div class="pmetrics">
-              <div class="pmetric">
-                <span class="pm-val">SSE</span>
-                <span class="pm-label">Dual-model streaming responses with live token comparison</span>
-              </div>
-              <div class="pmetric">
-                <span class="pm-val">2× LLM</span>
-                <span class="pm-label">Llama 3.3 70B vs 3.1 8B head-to-head evaluation</span>
-              </div>
-            </div>
-            <div class="pcard-links">
-              <a href="https://github.com/RohanMulay1/arena-ai" target="_blank" rel="noopener" class="plink" data-cursor="hi">
-                <svg width="10" height="10" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-                GitHub
-              </a>
-            </div>
+      <article class="pcard pcard-wide">
+        <div class="pc-wide-left">
+          <div class="pc-meta">
+            <span class="pnum">05</span>
+            <span class="hackathon-tag">NextGenHacks 2025</span>
+          </div>
+          <h3 class="pname">Arena AI</h3>
+        </div>
+        <div class="pc-wide-right">
+          <p class="pdesc">Live LLM battle platform built at NextGenHacks 2025. Streams two models (Llama 3.3 70B vs 3.1 8B) head-to-head via SSE, with real-time token speed charts and side-by-side quality scoring.</p>
+          <div class="tags">
+            <span class="tag">Next.js 14</span>
+            <span class="tag">FastAPI</span>
+            <span class="tag">Groq</span>
+            <span class="tag">Llama 3.3 70B</span>
+            <span class="tag">SSE</span>
+            <span class="tag">Recharts</span>
+          </div>
+          <div class="pcard-links">
+            <a href="https://github.com/RohanMulay1/arena-ai" target="_blank" rel="noopener" class="plink" data-cursor="hi">GitHub</a>
           </div>
         </div>
       </article>
@@ -377,19 +232,16 @@
     <div class="pdf-strip">
       <div>
         <p>Want the full picture?</p>
-        <p>My resume covers all three internships — ADAS at Cautio/BYTES, autonomous vehicles at Moonrider.ai, and the metrics behind each role.</p>
+        <p>My resume covers all three internships in detail — ADAS at Cautio/BYTES and autonomous vehicles at Moonrider.ai.</p>
       </div>
       <a href="assets/Rohan-Mulay-CV.pdf" target="_blank" rel="noopener" class="cv-btn" data-cursor="hi">
         View Resume
-        <svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M2 12L12 2M12 2H4M12 2V10"/>
-        </svg>
+        <svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12L12 2M12 2H4M12 2V10"/></svg>
       </a>
     </div>
-
   </section>
 
-  <!-- ==================== EXPERIENCE ==================== -->
+  <!-- EXPERIENCE -->
   <section id="experience">
     <div class="s-header">
       <div>
@@ -398,33 +250,20 @@
       </div>
     </div>
 
-    <div class="exp-grid">
+    <div class="exp-body">
 
-      <div class="exp-full">
-        <article class="exp-card">
-          <div class="exp-card-top">
-            <div class="exp-geo" aria-hidden="true">
-              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                <rect x="20" y="3" width="24" height="24" rx="2" transform="rotate(45 20 20)" stroke="var(--accent)" stroke-width="0.8" opacity="0.4"/>
-                <circle cx="20" cy="20" r="2" fill="var(--accent)" opacity="0.6"/>
-              </svg>
+      <div class="timeline">
+
+        <article class="tl-item">
+          <div class="tl-head">
+            <div class="tl-left">
+              <span class="tl-co">Cautio <span class="tl-acq">(acquired BYTES)</span></span>
+              <span class="tl-role">AI Engineer Intern</span>
             </div>
-            <div class="exp-head">
-              <div class="exp-co-wrap">
-                <span class="exp-co">Cautio</span>
-                <span class="exp-acq">(acquired BYTES)</span>
-              </div>
-              <span class="exp-yr">Jan 2026 – Present</span>
-            </div>
-            <span class="exp-role">AI Engineer Intern</span>
+            <span class="tl-yr">Jan 2026 – Present</span>
           </div>
-          <ul class="exp-bullets">
-            <li>ADAS system covering FCW, lane departure, and driver monitoring serving 100M+ km and 32M+ safety alerts across commercial fleets</li>
-            <li>DMS model achieving 96.7% drowsiness detection accuracy on Jetson Orin NX at 30 FPS</li>
-            <li>OCR pipeline for vehicle identification reaching 94.2% accuracy</li>
-            <li>FastAPI vector search endpoint with sub-50ms latency for real-time risk scoring</li>
-          </ul>
-          <div class="exp-tags">
+          <p class="tl-summary">ADAS suite (FCW, lane departure, DMS) covering 100M+ km and 32M+ safety alerts across commercial fleets. Drowsiness detection at 96.7% accuracy on Jetson Orin NX. OCR vehicle ID at 94.2%. FastAPI vector search endpoint under 50ms.</p>
+          <div class="tags">
             <span class="tag">TensorRT</span>
             <span class="tag">Jetson Orin NX</span>
             <span class="tag">YOLOv11</span>
@@ -433,81 +272,51 @@
           </div>
         </article>
 
-        <article class="exp-card">
-          <div class="exp-card-top">
-            <div class="exp-geo" aria-hidden="true">
-              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                <rect x="20" y="3" width="24" height="24" rx="2" transform="rotate(45 20 20)" stroke="var(--muted)" stroke-width="0.8" opacity="0.3"/>
-                <circle cx="20" cy="20" r="2" fill="var(--muted)" opacity="0.4"/>
-              </svg>
+        <article class="tl-item">
+          <div class="tl-head">
+            <div class="tl-left">
+              <span class="tl-co">BYTES</span>
+              <span class="tl-role">AI Engineer Intern</span>
             </div>
-            <div class="exp-head">
-              <span class="exp-co">BYTES</span>
-              <span class="exp-yr">Oct – Dec 2025</span>
-            </div>
-            <span class="exp-role">AI Engineer Intern</span>
+            <span class="tl-yr">Oct – Dec 2025</span>
           </div>
-          <ul class="exp-bullets">
-            <li>4-camera sensor fusion system processing 30 FPS real-time video for autonomous applications</li>
-            <li>YOLOv11 TensorRT FP16 pipeline reducing inference latency from 42ms to 11ms while maintaining 91.3% mAP</li>
-            <li>Monocular depth estimation module with 8.2% relative error on production road data</li>
-          </ul>
-          <div class="exp-tags">
+          <p class="tl-summary">4-camera sensor fusion system at 30 FPS. YOLOv11 TensorRT FP16 pipeline cut inference from 42ms to 11ms at 91.3% mAP. Monocular depth estimation with 8.2% relative error on production road data.</p>
+          <div class="tags">
             <span class="tag">Sensor Fusion</span>
             <span class="tag">TensorRT FP16</span>
             <span class="tag">YOLOv11</span>
-            <span class="tag">Python</span>
+            <span class="tag">Depth Estimation</span>
           </div>
         </article>
 
-        <article class="exp-card">
-          <div class="exp-card-top">
-            <div class="exp-geo" aria-hidden="true">
-              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                <rect x="20" y="3" width="24" height="24" rx="2" transform="rotate(45 20 20)" stroke="var(--muted)" stroke-width="0.8" opacity="0.3"/>
-                <circle cx="20" cy="20" r="2" fill="var(--muted)" opacity="0.4"/>
-              </svg>
+        <article class="tl-item">
+          <div class="tl-head">
+            <div class="tl-left">
+              <span class="tl-co">Moonrider.ai</span>
+              <span class="tl-role">ADAS &amp; ML Engineer</span>
             </div>
-            <div class="exp-head">
-              <span class="exp-co">Moonrider.ai</span>
-              <span class="exp-yr">Apr – Oct 2025</span>
-            </div>
-            <span class="exp-role">ADAS &amp; ML Engineer</span>
+            <span class="tl-yr">Apr – Oct 2025</span>
           </div>
-          <ul class="exp-bullets">
-            <li>Semantic segmentation pipeline achieving 83.4% mIoU on autonomous electric tractor datasets with 15K+ annotated frames</li>
-            <li>INT8 quantization reducing model size by 62% while sustaining 24 FPS on edge hardware</li>
-            <li>LSTM-based SoC/SoH estimation system with 2.1% RMSE for battery management in field conditions</li>
-          </ul>
-          <div class="exp-tags">
+          <p class="tl-summary">Semantic segmentation at 83.4% mIoU on 15K+ frame autonomous tractor dataset. INT8 quantization cut model size 62% while sustaining 24 FPS. LSTM SoC/SoH estimation at 2.1% RMSE for battery management in field conditions.</p>
+          <div class="tags">
             <span class="tag">Semantic Segmentation</span>
-            <span class="tag">INT8 Quant</span>
+            <span class="tag">INT8 Quantization</span>
             <span class="tag">LiDAR</span>
             <span class="tag">LSTM</span>
           </div>
         </article>
+
       </div>
 
-      <div class="edu-side">
-        <div class="edu-block">
-          <div class="exp-geo" aria-hidden="true">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-              <rect x="16" y="2" width="20" height="20" rx="2" transform="rotate(45 16 16)" stroke="var(--muted)" stroke-width="0.8" opacity="0.25"/>
-            </svg>
-          </div>
+      <div class="exp-aside">
+        <div class="aside-block">
           <h3 class="detail-h">Education</h3>
           <p class="edu-school">PES University</p>
           <p class="edu-degree">B.Tech Computer Science</p>
           <p class="edu-yr">2022 – 2026 · Bengaluru</p>
-          <div class="exp-tags" style="margin-top:16px;">
-            <span class="tag">AI / ML</span>
-            <span class="tag">Computer Vision</span>
-            <span class="tag">Systems</span>
-            <span class="tag">Edge AI</span>
-          </div>
         </div>
 
-        <div class="edu-block" style="margin-top:48px;">
+        <div class="aside-block">
           <h3 class="detail-h">Skills</h3>
           <div class="skills-row">
             <span class="skill-pill">Python</span>
@@ -535,14 +344,14 @@
     </div>
   </section>
 
-  <!-- ==================== CONTACT ==================== -->
+  <!-- CONTACT -->
   <section id="contact">
     <p class="s-label">Get in touch</p>
 
     <div class="contact-headline">
       <span class="tl"><span>Say hi!</span></span>
       <span class="tl">
-        <span><a href="mailto:rohanm1307@gmail.com" target="_blank" rel="noopener" data-cursor="hi">Let's talk <svg width="0.7em" height="0.7em" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;margin-bottom:0.12em;"><path d="M3 15L15 3M15 3H5M15 3V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></span>
+        <span><a href="mailto:rohanm1307@gmail.com" target="_blank" rel="noopener" data-cursor="hi">Let's talk <svg width="0.7em" height="0.7em" viewBox="0 0 18 18" fill="none" style="display:inline-block;vertical-align:middle;margin-bottom:0.1em;"><path d="M3 15L15 3M15 3H5M15 3V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></span>
       </span>
     </div>
 
@@ -557,8 +366,7 @@
             </svg>
           </button>
         </div>
-        <p>Bengaluru, India</p>
-        <p>+91 74839 94847</p>
+        <p>Bengaluru, India · +91 74839 94847</p>
       </div>
       <div class="cf-right">
         <a href="mailto:rohanm1307@gmail.com" data-cursor="hi">Email</a>
@@ -573,7 +381,6 @@
 
   </main>
 
-  <!-- GSAP -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="js/main.js"></script>
