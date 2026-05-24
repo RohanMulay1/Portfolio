@@ -253,6 +253,54 @@ nav.scrolled {
   font-weight: 300;
   overflow: hidden;
 }
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.hero-ctas {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.hero-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--fg);
+  color: var(--bg);
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border-radius: 100px;
+  cursor: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.hero-btn-primary:hover { opacity: 0.85; transform: translateY(-1px); }
+.hero-btn-ghost {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  cursor: none;
+  transition: color 0.25s ease;
+  position: relative;
+}
+.hero-btn-ghost::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 0;
+  width: 0; height: 1px;
+  background: var(--fg);
+  transition: width 0.3s ease;
+}
+.hero-btn-ghost:hover { color: var(--fg); }
+.hero-btn-ghost:hover::after { width: 100%; }
 .hero-right {
   display: flex;
   flex-direction: column;

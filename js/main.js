@@ -85,6 +85,8 @@ function heroIn() {
   gsap.to('.hero-eyebrow span', { y: 0, duration: 0.75, ease: 'power3.out', delay: 0.5 });
   gsap.set('.hero-desc', { opacity: 0, y: 14 });
   gsap.to('.hero-desc', { opacity: 1, y: 0, duration: 0.7, ease: 'power2.out', delay: 0.6 });
+  gsap.set('.hero-ctas', { opacity: 0, y: 12 });
+  gsap.to('.hero-ctas', { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out', delay: 0.75 });
   gsap.to('.pill', { x: 0, opacity: 1, duration: 0.5, stagger: 0.1, ease: 'power2.out', delay: 0.7 });
   gsap.to('.scroll-hint', { opacity: 1, duration: 0.6, delay: 1.1 });
 
