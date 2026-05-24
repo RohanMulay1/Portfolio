@@ -478,6 +478,19 @@ nav.scrolled {
   letter-spacing: -0.025em;
   line-height: 1.1;
 }
+.pname a {
+  position: relative;
+  display: inline-block;
+}
+.pname a::after {
+  content: '';
+  position: absolute;
+  bottom: -1px; left: 0;
+  width: 0; height: 1px;
+  background: var(--fg);
+  transition: width 0.3s ease;
+}
+.pname a:hover::after { width: 100%; }
 .pdesc {
   font-size: 13px;
   font-weight: 300;
