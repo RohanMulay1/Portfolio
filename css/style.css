@@ -447,17 +447,13 @@ nav.scrolled {
 }
 .pcard:hover { border-color: var(--border-hover); }
 .pcard--static { pointer-events: none; }
-.pcard--static .p-arrow { display: none; }
 .pcard-inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  min-height: 400px;
+  display: block;
 }
 .pcard-info {
-  padding: 40px 44px;
+  padding: 36px 44px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   gap: 20px;
 }
 .pcard-top { display: flex; align-items: flex-start; }
@@ -511,66 +507,6 @@ nav.scrolled {
 }
 .pm-label { font-size: 11px; color: var(--muted); line-height: 1.35; max-width: 130px; }
 
-/* Card Visual */
-.pcard-vis {
-  position: relative;
-  overflow: hidden;
-}
-.pcard-bg {
-  position: absolute;
-  inset: 0;
-  transition: transform 0.9s cubic-bezier(0.25,0.46,0.45,0.94);
-}
-.pcard:hover .pcard-bg { transform: scale(1.06); }
-
-/* Project card gradients */
-.p-siren .pcard-bg    { background: linear-gradient(145deg, #1A0000 0%, #5C0010 55%, #CC0020 100%); }
-.p-devlift .pcard-bg  { background: linear-gradient(145deg, #000B35 0%, #001F82 55%, #0050FF 100%); }
-.p-learnai .pcard-bg  { background: linear-gradient(145deg, #001A12 0%, #00512C 55%, #00A857 100%); }
-.p-shortlist .pcard-bg{ background: linear-gradient(145deg, #12002A 0%, #3B0080 55%, #7C3AED 100%); }
-.p-arena .pcard-bg    { background: linear-gradient(145deg, #1A0A00 0%, #7A3000 55%, #D97706 100%); }
-
-/* Blobs per project */
-.p-siren .blob1    { width:320px;height:320px;top:-80px;right:-60px;background:#FF2040; }
-.p-siren .blob2    { width:200px;height:200px;bottom:20px;right:80px;background:#FF8090; opacity:0.10; }
-.p-devlift .blob1  { width:320px;height:320px;top:-80px;right:-60px;background:#3B82F6; }
-.p-devlift .blob2  { width:200px;height:200px;bottom:20px;right:80px;background:#93C5FD; opacity:0.12; }
-.p-learnai .blob1  { width:320px;height:320px;top:-80px;right:-60px;background:#10B981; }
-.p-learnai .blob2  { width:200px;height:200px;bottom:20px;right:80px;background:#6EE7B7; opacity:0.10; }
-.p-shortlist .blob1{ width:320px;height:320px;top:-80px;right:-70px;background:#8B5CF6; }
-.p-shortlist .blob2{ width:200px;height:200px;bottom:30px;right:70px;background:#DDD6FE; opacity:0.10; }
-.p-arena .blob1    { width:320px;height:320px;top:-80px;right:-60px;background:#F59E0B; }
-.p-arena .blob2    { width:200px;height:200px;bottom:20px;right:80px;background:#FDE68A; opacity:0.10; }
-
-
-/* Corner arrow */
-.p-arrow {
-  position: absolute;
-  bottom: 24px; right: 24px;
-  width: 44px; height: 44px;
-  border: 1px solid rgba(255,255,255,0.18);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.3s, border-color 0.3s, transform 0.3s;
-}
-.pcard:hover .p-arrow {
-  background: #fff;
-  border-color: #fff;
-  transform: rotate(45deg);
-}
-.pcard:hover .p-arrow svg path { stroke: #000; }
-
-/* Decorative blobs */
-.blob {
-  position: absolute;
-  border-radius: 50%;
-  opacity: 0.22;
-  filter: blur(0px);
-  transition: transform 0.9s ease, opacity 0.9s ease;
-}
-.pcard:hover .blob { opacity: 0.38; transform: scale(1.2) rotate(20deg); }
 
 /* PDF / resume strip */
 .pdf-strip {
@@ -912,8 +848,6 @@ nav.scrolled {
   .scroll-hint { top: auto; bottom: 56px; }
   #work, #experience, #contact { padding: 80px 24px; }
   .s-header { margin-bottom: 40px; }
-  .pcard-inner { grid-template-columns: 1fr; }
-  .pcard-vis { height: 220px; order: -1; }
   .about-grid, .exp-grid { grid-template-columns: 1fr; gap: 32px; margin-top: 40px; }
   .hero-geo { top: auto; bottom: 120px; }
   .contact-footer { flex-direction: column; gap: 24px; align-items: flex-start; }
